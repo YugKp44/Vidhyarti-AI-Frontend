@@ -1,0 +1,113 @@
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: wheat;
+    /* White background */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.email-input {
+    width: 280px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.continue-button {
+    width: 300px;
+    padding: 10px;
+    background-color: #28a745;
+    /* Green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.continue-button:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+.signup-link {
+    margin-bottom: 15px;
+    /* Space between the sign-up link and social buttons */
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #007bff;
+    /* Blue color for the link */
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.or-divider {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    /* Align icon and text in the center */
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.social-button .social-icon {
+    margin-right: 15px;
+    /* Space between icon and text */
+}
+
+.google-button {
+    background-color: #db4437;
+    /* Google red */
+    color: white;
+}
+
+.microsoft-button {
+    background-color: #0078d4;
+    /* Microsoft blue */
+    color: white;
+}
+
+.apple-button {
+    background-color: #000000;
+    /* Black for Apple */
+    color: white;
+}
+
+.social-button:hover {
+    opacity: 0.9;
+}
