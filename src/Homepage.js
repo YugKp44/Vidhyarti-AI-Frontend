@@ -1,18 +1,28 @@
 import React from "react";
-import "./HomePage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './HomePage.css';
+
+import { faMessage } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 import {
   faTachometerAlt,
   faComments,
   faIdBadge,
-  faFileAlt,
   faGraduationCap,
   faMapMarkerAlt,
   faVideo,
+  faCog,
 } from "@fortawesome/free-solid-svg-icons";
-import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
+  // Function to handle the click event
+  const handleClick = () => {
+    navigate("/chatbot"); // Navigate to the Chatbot component on click
+  };
+
   return (
     <div className="container">
       <div className="sidebar">
@@ -27,25 +37,20 @@ const HomePage = () => {
           <li>
             <FontAwesomeIcon icon={faIdBadge} className="icon" /> College compare
           </li>
-          <li>
-            <FontAwesomeIcon icon={faFileAlt} className="icon" /> Digital documents
-          </li>
-          <li>
+         
+        <li>
             <FontAwesomeIcon icon={faGraduationCap} className="icon" /> Academic scholarship
           </li>
-          
           <li>
             <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" /> College compass
           </li>
           <li>
-            <FontAwesomeIcon icon={faVideo} className="icon" /> Internet videos
+            <FontAwesomeIcon icon={faVideo} className="icon" /> Campus tour
           </li>
           <li className="set">
-            <FontAwesomeIcon icon={faCog} className="icon" /> Setting
+            <FontAwesomeIcon icon={faCog} className="icon" /> Settings
           </li>
         </ul>
-      
-          
       </div>
 
       <div className="main-content">
@@ -55,7 +60,9 @@ const HomePage = () => {
         </p>
 
         <div className="conversation-section">
-          <h3>Conversation</h3>
+          <h3 onClick={handleClick} style={{ cursor: "pointer", padding: "20px", backgroundColor: "#eae7e4" }}>
+            <FontAwesomeIcon icon={faMessage} style={{ color: "#333" }} /> Conversation
+          </h3>
           <p>
             "Experience Conversation on a whole new level. Delve into its advanced features and unlock a world of possibilities."
           </p>
@@ -65,7 +72,7 @@ const HomePage = () => {
           <h2>Latest Updates</h2>
           <div className="updates">
             <div className="update-card">
-              <h3>Direct and concise: AI Insights: New Feature</h3>
+              <h3>AI Insights: New Feature</h3>
               <p>AI Insights: Gain valuable insights into the impact of your conversations.</p>
             </div>
             <div className="update-card">

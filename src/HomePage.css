@@ -33,7 +33,8 @@ body {
 /* Sidebar */
 .sidebar {
     width: 280px;
-    background-color: #e3d4cc;
+    background-color: #c4afaf;
+    opacity: 100%;
     padding: 30px;
     height: 100vh;
     display: flex;
@@ -52,6 +53,9 @@ body {
     list-style: none;
     padding: 0;
     width: 100%;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
 
 }
 
@@ -61,12 +65,15 @@ body {
     color: #333;
     font-size: 1.1em;
     display: flex;
+    padding: 10px;
+    border-radius: 10px;
     align-items: center;
 }
 
 .menu li:hover {
     color: #000;
     font-weight: bold;
+    background-color: #919090;
 }
 
 .icon {
@@ -77,14 +84,17 @@ body {
 
 /* Main Content */
 .main-content {
+    margin-top: -100px;
     flex-grow: 1;
     padding: 50px;
     background-color: #fefaf7;
     background-image: "C:\Users\Rohit\Desktop\backfround.png";
     display: flex;
+    position: relative;
+    top: 40px;
     flex-direction: column;
     align-items: center;
-    margin-top: -50px;
+    
 }
 
 h1 {
@@ -112,6 +122,14 @@ h1 {
     max-width: 800px;
     width: 100%;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conversation-section:hover {
+    transform: scale(1.05);
+    /* Slightly enlarges the box */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhances the shadow effect */
 }
 
 .conversation-section h3 {

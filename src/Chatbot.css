@@ -1,0 +1,164 @@
+.chatbot-body {
+    display: flex;
+    background-image: url("../public/w.jpg");
+    height: 100vh;
+    /* Make sure the container takes up the full height of the viewport */
+}
+
+.chat-sidebar {
+    width: 280px;
+    background-color: #c4afaf;
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* .centre-image{
+    z-index: 2;
+    background-image: url("../public/empty1.webp");
+    width: 50px;
+    height: 50px;
+}
+
+
+.main-chat {
+    flex-grow: 1;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end; 
+} */
+.main-chat {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centre-image {
+    background-image: url('../public/center.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    left: 20em;
+    width: 300px;
+    /* You can adjust the size */
+    height: 300px;
+    /* You can adjust the size */
+}
+
+.settings-chat {
+    font-size: larger;
+    font-weight: 600;
+    position: relative;
+    top: 450px;
+
+
+}
+
+.convo-li {
+
+    position: relative;
+    left: 5px;
+    padding-left: 30px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.chat-dash {
+    padding: 20px;
+    font-size: larger;
+    padding-left: 10px;
+    font-weight: 600;
+    position: relative;
+    left: -40px;
+
+}
+
+.dash-text {
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+.conversation-header {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 500px;
+    bottom: 300px;
+}
+
+li {
+    list-style: none;
+}
+
+.convo_ttext {
+    padding-left: 5px;
+}
+
+.vidyaAI {
+    justify-content: centre;
+    align-items: center;
+    display: flex;
+    position: relative;
+    left: 100px;
+    font-size: xx-large;
+}
+
+.Mainconvo {
+    font-size: xx-large;
+    color: rgb(109, 46, 46);
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 20px;
+    position: relative;
+    top: 250px;
+    right: 200px;
+}
+
+.input-section input {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.input-section button {
+    padding: 12px 20px;
+    background-color: #b58484;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.generate:hover {
+    background: rgb(115, 44, 44);
+    font-weight: 600;
+}
