@@ -1,0 +1,232 @@
+html,
+body {
+    overflow: hidden;
+    /* Prevents scrolling */
+    height: 100%;
+    /* Ensures the body takes up the full height of the screen */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    /* Ensure the container takes the full height of the viewport */
+    overflow: hidden;
+    /* No scroll bars */
+}
+
+/* HomePage.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3e9e4;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #e3d4cc;
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.logo {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+}
+
+.menu li {
+    margin: 20px 0;
+    cursor: pointer;
+    color: #333;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.menu li:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 50px;
+    background-color: #fefaf7;
+    background-image: "C:\Users\Rohit\Desktop\backfround.png";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 900px;
+    text-align: center;
+    /* Center-align text */
+}
+
+/* Conversation Section */
+.conversation-section {
+    background-color: #eae7e4;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.conversation-section h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.conversation-section p {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Latest Updates Section */
+.latest-updates {
+    margin-top: -28px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.latest-updates h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Flexbox for Updates Section */
+.updates {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.update-card {
+    background-color: #eae7e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    /* Set width of each card to 30% */
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
+}
+
+.update-card:hover {
+    transform: translateY(-5px);
+}
+
+.update-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.update-card p {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .updates {
+        gap: 10px;
+    }
+
+    .update-card {
+        width: 45%;
+        /* Set to 2 cards in one row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .main-content {
+        padding: 30px;
+    }
+
+    .update-card {
+        width: 100%;
+        /* Full-width cards for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .conversation-section {
+        padding: 20px;
+    }
+
+    .menu li {
+        font-size: 1em;
+        /* Smaller font for menu items on small screens */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+}
