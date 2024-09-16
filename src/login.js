@@ -3,23 +3,29 @@ import React, { useState } from "react";
 import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faMicrosoft, faApple } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState(""); // New state for password
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value); // Update password state
+  };
+
   const handleContinue = () => {
     console.log("Email entered:", email);
-    // You can add redirection or other logic here if needed
+    console.log("Password entered:", password);
+    // Handle login logic here
   };
 
   return (
     <div className="login-container">
-      <h2>Welcome</h2>
+      <h2>Welcome Back</h2>
       <input 
         type="email" 
         placeholder="Email Address" 
@@ -27,25 +33,32 @@ const Login = () => {
         onChange={handleEmailChange} 
         className="email-input"
       />
+      <input 
+        type="password" 
+        placeholder="Password" 
+        value={password} 
+        onChange={handlePasswordChange} 
+        className="password-input" // New class for password input
+      />
       <button className="continue-button" onClick={handleContinue}>
-        Continue
+        Log In
       </button>
       <div className="signup-link">
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p> {/* Ensure Link is imported */}
+        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
       </div>
       <div className="or-divider">OR</div>
       <div className="social-login">
         <button className="social-button google-button">
           <FontAwesomeIcon icon={faGoogle} className="social-icon" />
-          Login with Google
+          Log in with Google
         </button>
         <button className="social-button microsoft-button">
           <FontAwesomeIcon icon={faMicrosoft} className="social-icon" />
-          Login with Microsoft
+          Log in with Microsoft
         </button>
         <button className="social-button apple-button">
           <FontAwesomeIcon icon={faApple} className="social-icon" />
-          Login with Apple
+          Log in with Apple
         </button>
       </div>
     </div>

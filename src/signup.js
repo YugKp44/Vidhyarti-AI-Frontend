@@ -7,13 +7,28 @@ import { Link } from 'react-router-dom'; // Import Link
 
 const Signup = () => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState(""); // New state for password
+  const [confirmPassword, setConfirmPassword] = useState(""); // New state for confirm password
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
   const handleContinue = () => {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
     console.log("Email entered:", email);
+    console.log("Password entered:", password);
     // You can add redirection or other logic here if needed
   };
 
@@ -25,13 +40,27 @@ const Signup = () => {
         placeholder="Email Address" 
         value={email} 
         onChange={handleEmailChange} 
-        className="email-input"
+        className="input-field"
+      />
+      <input 
+        type="password" 
+        placeholder="Password" 
+        value={password} 
+        onChange={handlePasswordChange} 
+        className="input-field"
+      />
+      <input 
+        type="password" 
+        placeholder="Confirm Password" 
+        value={confirmPassword} 
+        onChange={handleConfirmPasswordChange} 
+        className="input-field"
       />
       <button className="continue-button" onClick={handleContinue}>
-        Continue
+        Sign Up
       </button>
       <div className="login-link">
-        <p>Already have an account? <Link to="/login">Login</Link></p> {/* Ensure Link is imported */}
+        <p>Already have an account? <Link to="/login">Login</Link></p>
       </div>
       <div className="or-divider">OR</div>
       <div className="social-login">

@@ -1,111 +1,146 @@
 /* General styling */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: wheat;
-    /* White background */
+    font-family: 'Arial', sans-serif;
+    background-color: bisque;
+    /* Light grey background for better contrast */
 }
 
-.login-container {
+/* Container for the signup box */
+.signup-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    padding: 20px;
+    background-color: bisque;
+    /* White background for the container */
+    border-radius: 10px;
+    /* Rounded corners for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for 3D effect */
 }
 
+/* Header */
 h2 {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    color: #333;
+    /* Darker text color for better readability */
 }
 
-.email-input {
-    width: 280px;
-    padding: 10px;
+/* Input fields */
+.input-field {
+    width: 100%;
+    max-width: 400px;
+    /* Max width for better responsiveness */
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* Slightly larger border-radius */
+    font-size: 16px;
+    /* Increased font size for readability */
+    box-sizing: border-box;
+    /* Ensures padding and border are included in width */
 }
 
+/* Continue button */
 .continue-button {
-    width: 300px;
-    padding: 10px;
-    background-color: #28a745;
-    /* Green color */
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background-color: #007bff;
+    /* Primary blue color */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    /* Increased font size for emphasis */
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect */
+    box-sizing: border-box;
+    /* Ensures padding and border are included in width */
+    text-align: center;
+    /* Center align text */
 }
 
 .continue-button:hover {
-    background-color: #218838;
-    /* Darker green on hover */
+    background-color: #0056b3;
+    /* Darker blue on hover */
 }
 
-.signup-link {
-    margin-bottom: 15px;
-    /* Space between the sign-up link and social buttons */
-    font-size: 14px;
+/* Link to login page */
+.login-link {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
 }
 
-.signup-link a {
+.login-link a {
     color: #007bff;
-    /* Blue color for the link */
     text-decoration: none;
 }
 
-.signup-link a:hover {
+.login-link a:hover {
     text-decoration: underline;
 }
 
+/* Divider */
 .or-divider {
     margin: 20px 0;
-    font-size: 14px;
-    color: #888;
+    font-size: 16px;
+    color: #aaa;
+    /* Light grey color for the divider */
 }
 
+/* Social login buttons */
 .social-login {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    /* Ensure consistency in width */
 }
 
 .social-button {
     display: flex;
     align-items: center;
-    /* Align icon and text in the center */
-    width: 300px;
-    padding: 10px;
+    justify-content: center;
+    /* Center align text and icon */
+    width: 100%;
+    padding: 12px;
     margin-bottom: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    color: white;
+    transition: opacity 0.3s ease;
+    /* Smooth transition effect */
+    box-sizing: border-box;
+    /* Ensures padding and border are included in width */
 }
 
 .social-button .social-icon {
     margin-right: 15px;
-    /* Space between icon and text */
 }
 
 .google-button {
     background-color: #db4437;
     /* Google red */
-    color: white;
 }
 
 .microsoft-button {
     background-color: #0078d4;
     /* Microsoft blue */
-    color: white;
 }
 
 .apple-button {
-    background-color: #000000;
+    background-color: #000;
     /* Black for Apple */
-    color: white;
 }
 
 .social-button:hover {
