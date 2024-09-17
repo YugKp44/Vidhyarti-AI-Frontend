@@ -162,3 +162,74 @@ li {
     background: rgb(115, 44, 44);
     font-weight: 600;
 }
+.mic-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Microphone icon styling */
+.mic-icon {
+    font-size: 24px;
+    color: #333;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Active state with glowing effect */
+.mic-container.active .mic-icon {
+    color: #e63946;
+    transform: scale(1.2);
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(230, 57, 70, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+    }
+}
+
+/* Soundwave animation */
+.soundwave {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(230, 57, 70, 0.3);
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    animation: soundwave 1.5s infinite;
+    transform: scale(0);
+}
+
+.mic-container.active .soundwave {
+    animation: soundwave 1.5s infinite;
+}
+
+@keyframes soundwave {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.1;
+        transform: scale(1.6);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
