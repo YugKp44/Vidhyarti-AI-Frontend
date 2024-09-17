@@ -1,9 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './HomePage.css';
-
-import { faMessage } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { faMessage, faUser } from "@fortawesome/free-solid-svg-icons"; // Import user icon
+import { useNavigate } from "react-router-dom";
 
 import {
   faTachometerAlt,
@@ -16,11 +15,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const HomePage = () => {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
-  // Function to handle the click event
   const handleClick = () => {
-    navigate("/chatbot"); // Navigate to the Chatbot component on click
+    navigate("/chatbot");
+  };
+
+  // Function to navigate to the signup page
+  const handleSignupClick = () => {
+    navigate("/signup"); // Assuming the signup route is /signup
   };
 
   return (
@@ -37,8 +40,7 @@ const HomePage = () => {
           <li>
             <FontAwesomeIcon icon={faIdBadge} className="icon" /> College compare
           </li>
-         
-        <li>
+          <li>
             <FontAwesomeIcon icon={faGraduationCap} className="icon" /> Academic scholarship
           </li>
           <li>
@@ -54,6 +56,11 @@ const HomePage = () => {
       </div>
 
       <div className="main-content">
+        {/* User signup icon in the top right corner */}
+        <div className="signup-icon" onClick={handleSignupClick}>
+          <FontAwesomeIcon icon={faUser} className="user-icon" />
+        </div>
+
         <h1>Welcome to विद्याrthi AI</h1>
         <p className="description">
           Discover powerful AI tools and features tailored to enhance your experience. Get started by exploring the options below.

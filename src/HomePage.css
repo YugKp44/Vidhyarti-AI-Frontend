@@ -81,7 +81,18 @@ body {
     font-size: 1.2em;
     color: #666;
 }
+.signup-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-top: 60px;
+    cursor: pointer;
+}
 
+.user-icon {
+    font-size: 24px;
+    color: #333;
+}
 /* Main Content */
 .main-content {
     margin-top: -100px;
