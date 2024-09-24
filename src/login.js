@@ -1,67 +1,63 @@
-import React, { useState } from "react";
-import './login.css';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faMicrosoft, faApple } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom'; // Ensure correct import here
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
+import './login.css';
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); // New state for password
+const LoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value); // Update password state
-  };
-
-  const handleContinue = () => {
-    console.log("Email entered:", email);
-    console.log("Password entered:", password);
-    // Handle login logic here
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
-    <div className="login-container">
-      <h2>Welcome Back</h2>
-      <input 
-        type="email" 
-        placeholder="Email Address" 
-        value={email} 
-        onChange={handleEmailChange} 
-        className="email-input"
-      />
-      <input 
-        type="password" 
-        placeholder="Password" 
-        value={password} 
-        onChange={handlePasswordChange} 
-        className="password-input" // New class for password input
-      />
-      <button className="continue-button" onClick={handleContinue}>
-        Log In
-      </button>
-      <div className="signup-link">
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-      </div>
-      <div className="or-divider">OR</div>
-      <div className="social-login">
-        <button className="social-button google-button">
-          <FontAwesomeIcon icon={faGoogle} className="social-icon" />
-          Log in with Google
-        </button>
-        <button className="social-button microsoft-button">
-          <FontAwesomeIcon icon={faMicrosoft} className="social-icon" />
-          Log in with Microsoft
-        </button>
-        <button className="social-button apple-button">
-          <FontAwesomeIcon icon={faApple} className="social-icon" />
-          Log in with Apple
-        </button>
-      </div>
+   <div className="login-container">
+  {/* Background Video */}
+  <video autoPlay muted loop className="background-video">
+    <source src={`${process.env.PUBLIC_URL}/videoplayback.mp4`} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* Left Image Container */}
+  <div className="left-image-container">
+    <img src={`${process.env.PUBLIC_URL}/vidhya.png`} alt="Description" className="side-image" />
+  </div>
+
+  {/* Right Side Form */}
+  <div className="right-form-container">
+    <div className="form-wrapper">
+      <h2>Login</h2>
+      <form>
+        <div className="input-group">
+          <input type="email" placeholder="Email" className="input-field" />
+        </div>
+        <div className="input-group password-input-group">
+          <input type={showPassword ? "text" : "password"} placeholder="Password" className="input-field" />
+          <span className="eye-icon" onClick={togglePasswordVisibility}>
+            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+          </span>
+        </div>
+        <button className="submit-btn">Login</button>
+        <div className="alternative-login">
+          <button className="social-btn google-btn">
+            <FontAwesomeIcon icon={faGoogle} /> Continue with Gmail
+          </button>
+          <button className="social-btn apple-btn">
+            <FontAwesomeIcon icon={faApple} /> Continue with Apple
+          </button>
+        </div>
+        <div className="form-links">
+          <a href="/signup">Create an account</a>
+          <a href="/forgot-password">Forgot your password?</a>
+        </div>
+      </form>
     </div>
+  </div>
+</div>
+
   );
 };
 
-export default Login;
+export default LoginPage;

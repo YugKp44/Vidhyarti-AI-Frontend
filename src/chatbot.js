@@ -15,7 +15,7 @@ const Chatbot = () => {
     <div style={{ padding: '0px', textAlign: 'center' }}>
       <div className='chatbot-body'>
         <div className="chat-sidebar">
-          <h2 className='vidyaAI'>विद्यार्थी AI</h2>
+          <h2 className='vidyaAI'>विद्याrthi AI</h2>
           <ul className='chat-dash'>
             <li className='dash-text'>
               <FontAwesomeIcon icon={faBars} style={{ color: "#050505" }} /> Dashboard

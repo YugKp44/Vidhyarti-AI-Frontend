@@ -1,14 +1,16 @@
-// Signup.js
 import React, { useState } from "react";
 import './signup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faMicrosoft, faApple } from '@fortawesome/free-brands-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle, faApple,faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom'; // Import Link
 
 const Signup = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); // New state for password
-  const [confirmPassword, setConfirmPassword] = useState(""); // New state for confirm password
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for toggling confirm password visibility
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -22,6 +24,14 @@ const Signup = () => {
     setConfirmPassword(e.target.value);
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   const handleContinue = () => {
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
@@ -29,53 +39,72 @@ const Signup = () => {
     }
     console.log("Email entered:", email);
     console.log("Password entered:", password);
-    // You can add redirection or other logic here if needed
+    // Add any redirection or further logic here
   };
 
   return (
     <div className="signup-container">
-      <h2>Sign Up</h2>
-      <input 
-        type="email" 
-        placeholder="Email Address" 
-        value={email} 
-        onChange={handleEmailChange} 
-        className="input-field"
-      />
-      <input 
-        type="password" 
-        placeholder="Password" 
-        value={password} 
-        onChange={handlePasswordChange} 
-        className="input-field"
-      />
-      <input 
-        type="password" 
-        placeholder="Confirm Password" 
-        value={confirmPassword} 
-        onChange={handleConfirmPasswordChange} 
-        className="input-field"
-      />
-      <button className="continue-button" onClick={handleContinue}>
-        Sign Up
-      </button>
-      <div className="login-link">
-        <p>Already have an account? <Link to="/login">Login</Link></p>
-      </div>
-      <div className="or-divider">OR</div>
-      <div className="social-login">
-        <button className="social-button google-button">
-          <FontAwesomeIcon icon={faGoogle} className="social-icon" />
-          Sign up with Google
+      <video autoPlay muted loop className="background-video">
+        <source src={`${process.env.PUBLIC_URL}/videoplayback.mp4`} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+       <div className="left-image-container">
+         <img src={`${process.env.PUBLIC_URL}/vidhya.png`} alt="Description" className="side-image1" />
+       </div>
+      <div className="form-wrapper1">
+        <h2>Sign Up</h2>
+        <input 
+          type="email" 
+          placeholder="Email Address" 
+          value={email} 
+          onChange={handleEmailChange} 
+          className="input-field"
+        />
+        <div className="password-wrapper">
+          <input 
+            type={showPassword ? "text" : "password"} 
+            placeholder="Password" 
+            value={password} 
+            onChange={handlePasswordChange} 
+            className="input-field"
+          />
+          <span className="password-icon" onClick={togglePasswordVisibility}>
+            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+          </span>
+        </div>
+        <div className="password-wrapper">
+          <input 
+            type={showConfirmPassword ? "text" : "password"} 
+            placeholder="Confirm Password" 
+            value={confirmPassword} 
+            onChange={handleConfirmPasswordChange} 
+            className="input-field"
+          />
+          <span className="password-icon" onClick={toggleConfirmPasswordVisibility}>
+            <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+          </span>
+        </div>
+        <button className="continue-button" onClick={handleContinue}>
+          Sign Up
         </button>
-        <button className="social-button microsoft-button">
-          <FontAwesomeIcon icon={faMicrosoft} className="social-icon" />
-          Sign up with Microsoft
-        </button>
-        <button className="social-button apple-button">
-          <FontAwesomeIcon icon={faApple} className="social-icon" />
-          Sign up with Apple
-        </button>
+        <div className="login-link">
+          <p>Already have an account? <Link to="/login">Login</Link></p>
+        </div>
+        <div className="or-divider">OR</div>
+        <div className="social-login">
+          <button className="social-button google-button">
+            <FontAwesomeIcon icon={faGoogle} className="social-icon" />
+            Sign up with Google
+          </button>
+          <button className="social-button microsoft-button">
+            <FontAwesomeIcon icon={faMicrosoft} className="social-icon" />
+            Sign up with Microsoft
+          </button>
+          <button className="social-button apple-button">
+            <FontAwesomeIcon icon={faApple} className="social-icon" />
+            Sign up with Apple
+          </button>
+        </div>
       </div>
     </div>
   );

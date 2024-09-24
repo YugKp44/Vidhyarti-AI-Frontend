@@ -1,161 +1,250 @@
-/* General styling */
-body {
+/* Global Styling */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: bisque;
-    /* Light grey background for better contrast */
 }
 
-/* Container for the login box */
+body,
+html {
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-image-container {
+    flex: 1;
+    /* Takes up 1/3 of the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-image {
+    max-width: 100%;
+    /* Makes the image responsive */
+    height: auto;
+    object-fit: cover;
+    margin-top: -176px;
+    /* Ensures the image covers the available space without distortion */
+}
+/* Main Container */
+/* Ensure the login form is centered on the page */
+/* Global Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container - Full height and centered content */
 .login-container {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    /* Align content to the top */
     align-items: center;
-    justify-content: center;
+    /* Center content horizontally */
+    width: 100%;
+    /* Full width */
     height: 100vh;
+    /* Full viewport height */
+    padding-top: 50px;
+    /* Adjust space from the top */
+}
+
+.form-wrapper {
+    width: 400px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Adjusting the left image container */
+.left-image-container {
+    position: absolute;
+    /* Position it over the background */
+    top: 0;
+    /* Align to the top of the viewport */
+    left: 0;
+    /* Align to the left of the viewport */
+    width: 100%;
+    /* Take full width of the container */
+    height: 300px;
+    /* Set a fixed height or as needed */
+   
+  
+    /* Update path to your image */
+    background-size: cover;
+    /* Cover the area without distorting the image */
+    border-radius: 0;
+    /* Remove border radius if not needed */
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Styling for the rest of the elements remains the same */
+
+
+.password-input-group {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    margin-top: 10px;
+    color: #0a080a;
+    cursor: pointer;
+}
+
+
+/* For video background in the login page */
+/* Video should cover the entire background */
+
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+}
+
+/* Right Side Form Section */
+.right-form-container {
+    flex: 1;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    background-color: bisque;
-    /* White background for the container */
-    border-radius: 10px;
-    /* Rounded corners for the container */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for 3D effect */
+    
 }
 
-/* Header */
-h2 {
+
+
+.form-wrapper h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
     margin-bottom: 20px;
-    font-size: 28px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
     color: #333;
-    /* Darker text color for better readability */
+    font-size: 1em;
 }
 
-/* Email input */
-.email-input {
-    width: 100%;
-    max-width: 400px;
-    /* Max width for better responsiveness */
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    /* Slightly larger border-radius */
-    font-size: 16px;
-    /* Increased font size for readability */
-    box-sizing: border-box;
-    /* Ensures padding and border are included in width */
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
 }
 
-/* Password input */
-.password-input {
+/* Submit Button */
+.submit-btn {
     width: 100%;
-    max-width: 400px;
     padding: 12px;
-    margin-bottom: 20px;
-    /* Space between password and button */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-/* Continue button */
-.continue-button {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    background-color: #007bff;
-    /* Primary blue color */
-    color: white;
     border: none;
     border-radius: 8px;
+    background: #0b070b;
+    
+    color: white;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 18px;
-    /* Increased font size for emphasis */
-    transition: background-color 0.3s ease;
-    /* Smooth transition effect */
-    box-sizing: border-box;
-    /* Ensures padding and border are included in width */
-    text-align: center;
-    /* Center align text */
+    transition: background 0.3s ease;
 }
 
-.continue-button:hover {
-    background-color: #0056b3;
-    /* Darker blue on hover */
+.submit-btn:hover {
+    
 }
 
-/* Link to signup page */
-.signup-link {
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #333;
+/* Social Login Buttons */
+.alternative-login {
+    margin-top: 20px;
 }
 
-.signup-link a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.signup-link a:hover {
-    text-decoration: underline;
-}
-
-/* Divider */
-.or-divider {
-    margin: 20px 0;
-    font-size: 16px;
-    color: #aaa;
-    /* Light grey color for the divider */
-}
-
-/* Social login buttons */
-.social-login {
-    display: flex;
-    flex-direction: column;
+.social-btn {
     width: 100%;
-    max-width: 400px;
-    /* Ensure consistency in width */
-}
-
-.social-button {
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center align text and icon */
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    transition: opacity 0.3s ease;
-    /* Smooth transition effect */
-    box-sizing: border-box;
-    /* Ensures padding and border are included in width */
+    gap: 10px;
+    transition: background 0.3s ease;
 }
 
-.social-button .social-icon {
-    margin-right: 15px;
+.google-btn {
+    background-color: #f9f6f5;
+    color: #000a0a;
 }
 
-.google-button {
-    background-color: #db4437;
-    /* Google red */
+.apple-btn {
+    background-color: #f9f6f6;
+    color: #000a0a;
 }
 
-.microsoft-button {
-    background-color: #0078d4;
-    /* Microsoft blue */
-}
-
-.apple-button {
-    background-color: #000;
-    /* Black for Apple */
-}
-
-.social-button:hover {
+.social-btn:hover {
     opacity: 0.9;
+}
+
+/* Form Links */
+.form-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-links a {
+    font-size: 0.9em;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    color: #00dbde;
 }

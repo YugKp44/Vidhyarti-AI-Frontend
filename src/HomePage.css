@@ -1,13 +1,12 @@
 html,
 body {
     overflow: hidden;
-    /* Prevents scrolling */
     height: 100%;
-    /* Ensures the body takes up the full height of the screen */
-    margin: 0;
     padding: 0;
+    background-image: url("../public/center.jpg");
+    background-size: cover;
+    background-position: center;
 }
-
 .container {
     height: 100vh;
     /* Ensure the container takes the full height of the viewport */
@@ -21,31 +20,43 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f3e9e4;
-    color: #333;
+    background-image: url("../public/center.jpg");
+    color: #fcf7f7;
 }
 
 .container {
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    min-height: 100vh;
+    overflow: hidden;
+    backdrop-filter: blur(-4px);
+    /* Add blur effect */
 }
-
+.white{
+    color: white;
+}
+.white1{
+    color: white;
+}
 /* Sidebar */
 .sidebar {
     width: 280px;
-    background-color: #c4afaf;
-    opacity: 100%;
+    background-color: #e8e8e887;
+    /* Transparent background */
     padding: 30px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
+    backdrop-filter: blur(-4px);
+    /* Add blur effect */
+    -webkit-backdrop-filter: blur(-4px);
+    /* For Safari */
 }
 
 .logo {
     font-size: 1.8em;
-    color: #333;
+    color: #0f0a0a;
     margin-bottom: 50px;
 }
 
@@ -62,7 +73,7 @@ body {
 .menu li {
     margin: 20px 0;
     cursor: pointer;
-    color: #333;
+    color: #120c0c;
     font-size: 1.1em;
     display: flex;
     padding: 10px;
@@ -79,7 +90,7 @@ body {
 .icon {
     margin-right: 10px;
     font-size: 1.2em;
-    color: #666;
+    color: #070101;
 }
 .signup-icon {
     position: absolute;
@@ -91,32 +102,36 @@ body {
 
 .user-icon {
     font-size: 24px;
-    color: #333;
+    color: #090707;
+    margin-top: 0px;
 }
 /* Main Content */
 .main-content {
-    margin-top: -100px;
     flex-grow: 1;
     padding: 50px;
-    background-color: #fefaf7;
-    background-image: "C:\Users\Rohit\Desktop\backfround.png";
+    width: 1255px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Slight transparency */
+    backdrop-filter: blur(-4px);
+    /* Add blur effect */
+    -webkit-backdrop-filter: blur(-4px);
+    /* For Safari */
     display: flex;
-    position: relative;
-    top: 40px;
+    margin-top: -29px;
     flex-direction: column;
     align-items: center;
-    
 }
 
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #eae7e4;
 }
 
 .description {
     font-size: 1.2em;
-    color: #666;
+    color: #0b0909;
     margin-bottom: 40px;
     max-width: 900px;
     text-align: center;
@@ -157,7 +172,7 @@ h1 {
 
 /* Latest Updates Section */
 .latest-updates {
-    margin-top: -28px;
+    margin-top: 53px;
     max-width: 900px;
     width: 100%;
     text-align: center;
@@ -175,6 +190,12 @@ h1 {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+}
+h1{
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .update-card {
@@ -229,6 +250,7 @@ h1 {
         width: 100%;
         height: auto;
         padding: 20px;
+        color: rgba(255, 255, 255, 0.7);
     }
 
     .main-content {
@@ -257,5 +279,6 @@ h1 {
 
     .description {
         font-size: 1em;
+       
     }
 }

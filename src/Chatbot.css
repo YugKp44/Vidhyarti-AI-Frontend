@@ -1,6 +1,6 @@
 .chatbot-body {
     display: flex;
-    background-image: url("../public/w.jpg");
+    background-image: url("../public/center.jpg");
     height: 100vh;
     /* Make sure the container takes up the full height of the viewport */
 }

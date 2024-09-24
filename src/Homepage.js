@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './HomePage.css';
-import { faMessage, faUser } from "@fortawesome/free-solid-svg-icons"; // Import user icon
+import { faMessage, faUser, faArrowRight } from "@fortawesome/free-solid-svg-icons"; // Add faArrowRight here
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -21,14 +21,17 @@ const HomePage = () => {
     navigate("/chatbot");
   };
 
-  // Function to navigate to the signup page
   const handleSignupClick = () => {
-    navigate("/signup"); // Assuming the signup route is /signup
+    navigate("/signup");
   };
 
   return (
     <div className="container">
-      <div className="sidebar">
+      <video autoPlay muted loop className="background-video">
+        <source src={`${process.env.PUBLIC_URL}/videoplayback.mp4`} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <aside className="sidebar">
         <h2 className="logo">विद्याrthi AI</h2>
         <ul className="menu">
           <li>
@@ -38,25 +41,24 @@ const HomePage = () => {
             <FontAwesomeIcon icon={faComments} className="icon" /> Conversation
           </li>
           <li>
-            <FontAwesomeIcon icon={faIdBadge} className="icon" /> College compare
+            <FontAwesomeIcon icon={faIdBadge} className="icon" /> College Compare
           </li>
           <li>
-            <FontAwesomeIcon icon={faGraduationCap} className="icon" /> Academic scholarship
+            <FontAwesomeIcon icon={faGraduationCap} className="icon" /> Academic Scholarship
           </li>
           <li>
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" /> College compass
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" /> College Compass
           </li>
           <li>
-            <FontAwesomeIcon icon={faVideo} className="icon" /> Campus tour
+            <FontAwesomeIcon icon={faVideo} className="icon" /> Campus Tour
           </li>
           <li className="set">
             <FontAwesomeIcon icon={faCog} className="icon" /> Settings
           </li>
         </ul>
-      </div>
+      </aside>
 
-      <div className="main-content">
-        {/* User signup icon in the top right corner */}
+      <main className="main-content">
         <div className="signup-icon" onClick={handleSignupClick}>
           <FontAwesomeIcon icon={faUser} className="user-icon" />
         </div>
@@ -66,16 +68,14 @@ const HomePage = () => {
           Discover powerful AI tools and features tailored to enhance your experience. Get started by exploring the options below.
         </p>
 
-        <div className="conversation-section">
+        <section className="conversation-section">
           <h3 onClick={handleClick} style={{ cursor: "pointer", padding: "20px", backgroundColor: "#eae7e4" }}>
-            <FontAwesomeIcon icon={faMessage} style={{ color: "#333" }} /> Conversation
+            <FontAwesomeIcon icon={faMessage} style={{ color: "#333" }} /> Start Your First Conversation with विद्याrthi AI
+            <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "10px", color: "#333" }} /> {/* Add the arrow here */}
           </h3>
-          <p>
-            "Experience Conversation on a whole new level. Delve into its advanced features and unlock a world of possibilities."
-          </p>
-        </div>
+        </section>
 
-        <div className="latest-updates">
+        <section className="latest-updates">
           <h2>Latest Updates</h2>
           <div className="updates">
             <div className="update-card">
@@ -91,8 +91,8 @@ const HomePage = () => {
               <p>Based on your valuable feedback, we've made significant improvements to the user interface.</p>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 };
